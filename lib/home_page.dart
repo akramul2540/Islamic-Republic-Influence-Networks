@@ -8,8 +8,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-final _darktheme = true;
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {

@@ -36,26 +36,33 @@ class _Bottom_NavigationBarState extends State<Bottom_NavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.teal,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.white,
-          currentIndex: _selectedindex,
-          onTap: (index){
-            setState(() {
-              _selectedindex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: 'Search'),
-              BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Notifications'),
-              BottomNavigationBarItem(
-              icon: Icon(Icons.person), label: 'Profile'),
-          ],
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: BottomNavigationBar(
+              elevation: 0,
+              backgroundColor: Colors.teal,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: Colors.white,
+              currentIndex: _selectedindex,
+              onTap: (index){
+                setState(() {
+                  _selectedindex = index;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home), label: 'Home'),
+                  BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label: 'Search'),
+                  BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications), label: 'Notifications'),
+                  BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: 'Profile'),
+              ],
+            ),
+          ),
         ),
         body: pages[_selectedindex],
     );
